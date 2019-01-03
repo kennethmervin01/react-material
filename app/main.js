@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
+import AppBar from 'Components/AppBar';
+import Drawer from 'Components/Drawer';
 
-const title = 'My Minimal React Webpack Babel Setupss';
+const App = () => (
+  <Fragment>
+    <AppBar />
+    <Drawer />
+  </Fragment>
+);
 
-ReactDOM.render(<div>{title}</div>, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 
 module.hot.accept();
