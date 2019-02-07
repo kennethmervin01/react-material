@@ -5,6 +5,7 @@
     "node": true
   },
   "extends": ["airbnb", "prettier/react"],
+  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -17,6 +18,22 @@
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "single"],
     "semi": ["error", "always"],
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/prop-types": 0,
+    "react/destructuring-assignment": [0, "always"],
+    "prefer-destructuring": [
+      "error",
+      {
+        "array": false,
+        "object": false
+      }
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["app"]
+      }
+    }
   }
 }
