@@ -35,7 +35,9 @@
   },
   "scripts": {
     "start": "webpack-dev-server --config ./config/webpack.config.dev.js --mode development",
-    "build": "SET NODE_ENV=production && webpack --config ./config/webpack.config.prod.js --mode production"
+    "build": "SET NODE_ENV=production && webpack --config ./config/webpack.config.prod.js --mode production",
+    "clean": "rm -rf build && mkdir build",
+    "production": "npm run clean && npm run build"
   },
   "dependencies": {
     "@material-ui/core": "^3.7.0",

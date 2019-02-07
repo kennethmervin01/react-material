@@ -1,3 +1,5 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackRootPlugin = require('html-webpack-root-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
 const path = require('path');
@@ -8,7 +10,7 @@ module.exports = {
   output: {
     path: `${__dirname}/dist`,
     publicPath: '/',
-    filename: 'bundle.js',
+    filename: 'assets/bundle.js',
   },
 
   module: {
@@ -33,7 +35,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpg|gif)$/i,
+        test: /\.(png|jpg|gif|woff|woff2|eot|ttf|svg)$/i,
         use: [
           {
             loader: 'url-loader',
@@ -48,6 +50,14 @@ module.exports = {
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebpackPlugin({
+      title: 'Online Registration',
+      meta: {
+        viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
+        'X-UA-Compatible': { 'http-equiv': 'X-UA-Compatible', content: 'ie=edge' },
+      },
+    }),
+    new HtmlWebpackRootPlugin(),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
@@ -58,10 +68,10 @@ module.exports = {
 
   resolve: {
     alias: {
-      Components: path.resolve(__dirname, '../app/components'),
-      Containers: path.resolve(__dirname, '../app/containers'),
-      Images: path.resolve(__dirname, '../app/images'),
-      Utils: path.resolve(__dirname, '../app/utils'),
+      components: path.resolve(__dirname, '../app/components'),
+      containers: path.resolve(__dirname, '../app/containers'),
+      assets: path.resolve(__dirname, '../app/assets'),
+      utils: path.resolve(__dirname, '../app/utils'),
     },
     extensions: ['.jsx', '.js'],
   },
@@ -69,5 +79,9 @@ module.exports = {
   devServer: {
     contentBase: './dist',
     hot: true,
+    host: 'localhost',
+    port: 4040,
+    historyApiFallback: true,
+    publicPath: '/',
   },
 };

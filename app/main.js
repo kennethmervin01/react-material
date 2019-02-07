@@ -1,10 +1,13 @@
 import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
-import AppBar from 'Components/AppBar';
-import Drawer from 'Components/Drawer';
+import 'typeface-roboto';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import AppBar from 'components/AppBar';
+import Drawer from 'components/Drawer';
 
 const App = () => (
   <Fragment>
+    <CssBaseline />
     <AppBar />
     <Drawer />
   </Fragment>
@@ -12,4 +15,6 @@ const App = () => (
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
-module.hot.accept();
+if (module.hot) {
+  module.hot.accept();
+}
