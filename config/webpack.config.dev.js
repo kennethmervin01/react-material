@@ -51,7 +51,7 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Online Registration',
+      title: 'COL Financial',
       meta: {
         viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
         'X-UA-Compatible': { 'http-equiv': 'X-UA-Compatible', content: 'ie=edge' },
@@ -79,7 +79,7 @@ module.exports = {
   devServer: {
     contentBase: './dist',
     hot: true,
-    host: 'localhost',
+    host: '172.16.148.147',
     port: 4040,
     historyApiFallback: true,
     publicPath: '/',

@@ -2,14 +2,20 @@ import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
 import 'typeface-roboto';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import AppBar from 'components/AppBar';
-import Drawer from 'components/Drawer';
+import Layout from 'components/Layout';
+import { MuiThemeProvider } from '@material-ui/core/styles';
+import ColTheme from 'components/ColTheme';
+import 'assets/main.css';
+import Stock from 'containers/Quotes/StockInfo';
 
 const App = () => (
   <Fragment>
     <CssBaseline />
-    <AppBar />
-    <Drawer />
+    <MuiThemeProvider theme={ColTheme}>
+      <Layout>
+        <Stock />
+      </Layout>
+    </MuiThemeProvider>
   </Fragment>
 );
 

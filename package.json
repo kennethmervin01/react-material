@@ -40,12 +40,21 @@
     "production": "npm run clean && npm run build"
   },
   "dependencies": {
-    "@material-ui/core": "^3.7.0",
+    "@devexpress/dx-react-chart": "^1.10.3",
+    "@devexpress/dx-react-chart-material-ui": "^1.10.3",
+    "@devexpress/dx-react-core": "^1.10.3",
+    "@devexpress/dx-react-grid": "^1.10.3",
+    "@devexpress/dx-react-grid-material-ui": "^1.10.3",
+    "@material-ui/core": "^3.9.2",
     "@material-ui/icons": "^3.0.1",
+    "@material-ui/lab": "^3.0.0-alpha.30",
+    "@material-ui/styles": "^3.0.0-alpha.10",
     "axios": "^0.18.0",
     "babel-eslint": "^10.0.1",
+    "classnames": "^2.2.6",
     "exif-js": "^2.3.0",
     "moment": "^2.23.0",
+    "mui-datatables": "^2.0.0-beta.56",
     "prop-types": "^15.6.2",
     "query-string": "^6.2.0",
     "react": "^16.8.2",
@@ -54,6 +63,10 @@
     "react-material-ui-form-validator": "^2.0.3",
     "react-phone-number-input": "^2.3.2",
     "react-router-dom": "^4.3.1",
+    "react-swipeable-views": "^0.13.1",
+    "react-touch-carousel": "^0.9.3",
+    "recompose": "^0.30.0",
     "typeface-roboto": "^0.0.54"
-  }
+  },
+  "sideEffects": false
 }

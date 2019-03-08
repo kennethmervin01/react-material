@@ -56,7 +56,7 @@ module.exports = {
   plugins: [
     new CompressionPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Online Registration',
+      title: 'Col Financial',
       meta: {
         viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
         'X-UA-Compatible': { 'http-equiv': 'X-UA-Compatible', content: 'ie=edge' },
