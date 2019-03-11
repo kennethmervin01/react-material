@@ -20,6 +20,13 @@ const style = theme => ({
     justifyContent: 'flex-end',
     padding: '0 8px',
     ...theme.mixins.toolbar,
+
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '79px',
+    },
+    [theme.breakpoints.down('xs')]: {
+      marginTop: '79px',
+    },
   },
 });
 

@@ -38,7 +38,7 @@ const Ticker = ({ classes }) => {
     for (let i = 0; i < 10; i++) {
       // Create the parent and add the children
       child.push(
-        <Paper className={classes.ticker}>
+        <Paper className={classes.ticker} key={i}>
           <Typography color="textPrimary" className={classes.stockCode}>
             MPI
           </Typography>
