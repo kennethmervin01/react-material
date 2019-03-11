@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import classNames from 'classnames';
 import {
-  Drawer, IconButton, Divider, Hidden, Typography,
+  Drawer, IconButton, Divider, Hidden, Typography, Avatar,
 } from '@material-ui/core';
 import {
-  ChevronLeft,
   Home,
   Assessment,
   Ballot,
@@ -17,10 +16,12 @@ import {
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ListItemText from '@material-ui/core/ListItemText';
 import { withStyles } from '@material-ui/core/styles';
 import fullLogo from 'assets/fullLogo.png';
 import cLogo from 'assets/cLogo.png';
+import profileAvatar from 'assets/jon_snow.jpg';
 
 const drawerWidth = 230;
 const style = theme => ({
@@ -92,14 +93,24 @@ const style = theme => ({
   divider: {
     marginBottom: '5px',
   },
+  bigAvatar: {
+    width: 60,
+    height: 60,
+  },
+  profileContainer: {
+    backgroundColor: '#11365d',
+  },
+  profile: {
+    color: '#fff',
+  },
+  logout: {
+    color: '#ccc',
+    fontSize: '11px',
+  },
 });
 
 const AppDrawer = ({ classes, open, onClose }) => {
   const [openMini, setOpen] = React.useState(true);
-
-  function handleDrawerOpen() {
-    setOpen(true);
-  }
 
   function handleDrawerClose() {
     setOpen(!openMini);
@@ -128,7 +139,28 @@ const AppDrawer = ({ classes, open, onClose }) => {
               { !openMini && <img src={`${cLogo}`} alt="cLogo" /> }
             </IconButton>
           </div>
-          <Divider className={classes.divider} />
+          <List className={classes.profileContainer}>
+            <ListItem alignItems="flex-start">
+              <ListItemAvatar>
+                <Avatar alt="John Snow" src={profileAvatar} />
+              </ListItemAvatar>
+              {openMini && (<ListItemText
+              secondary={
+                <Fragment>
+                  <Typography component="span" className={classes.profile}>
+                   John Doe
+                  </Typography>
+                  <Typography component="span" className={classes.logout}>
+                    Acct #: 0010-0022
+                  </Typography>
+                  <Typography component="span" className={classes.logout}>
+                  Logout
+                  </Typography>
+                </Fragment>
+              }
+              />)}
+            </ListItem>
+          </List>
           <List>
             <ListItem button key="Home">
               <ListItemIcon classes={{ root: classes.menuList }}>
@@ -214,10 +246,28 @@ const AppDrawer = ({ classes, open, onClose }) => {
               <img src={`${fullLogo}`} alt="fullLogo" />
             </IconButton>
           </div>
-          <Divider className={classes.divider} />
-          <Typography variant="h6" className={classes.menuListCategory}>
-            Main
-          </Typography>
+          <List className={classes.profileContainer}>
+            <ListItem alignItems="flex-start">
+              <ListItemAvatar>
+                <Avatar alt="John Snow" src={profileAvatar} />
+              </ListItemAvatar>
+              <ListItemText
+              secondary={
+                <Fragment>
+                  <Typography component="span" className={classes.profile}>
+                   John Doe
+                  </Typography>
+                  <Typography component="span" className={classes.logout}>
+                    Acct #: 0010-0022
+                  </Typography>
+                  <Typography component="span" className={classes.logout}>
+                  Logout
+                  </Typography>
+                </Fragment>
+              }
+              />
+            </ListItem>
+          </List>
           <List>
             <ListItem button key="Home">
               <ListItemIcon classes={{ root: classes.menuList }}>

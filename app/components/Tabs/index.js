@@ -67,7 +67,7 @@ const style = theme => ({
     height: 18,
   },
   appBarMove: {
-    marginTop: '30px',
+    marginTop: '32px',
   },
   tabs: {
     marginRight: '55px',
@@ -90,35 +90,65 @@ const TabMenu = ({ classes, onOpen }) => (
           </IconButton>
         </Toolbar>
       </AppBar>
-    </Hidden>
-    <AppBar position="static" color="default" className={classes.appBarMove}>
-      <Toolbar className={classes.toolBar} variant="dense" disableGutters>
-        <Hidden mdUp implementation="css">
-          <IconButton
-            aria-label="Open drawer"
-            className={classes.menuButton1}
-            onClick={() => {
-              onOpen();
-            }}
+      <AppBar position="fixed" color="default" className={classes.appBarMove}>
+        <Toolbar className={classes.toolBar} variant="dense" disableGutters>
+          <Hidden mdUp implementation="css">
+            <IconButton
+              aria-label="Open drawer"
+              className={classes.menuButton1}
+              onClick={() => {
+                onOpen();
+              }}
+            >
+              <HomeIcon />
+            </IconButton>
+          </Hidden>
+          <Tabs
+            value={0}
+            indicatorColor="primary"
+            textColor="primary"
+            variant="scrollable"
+            scrollButtons="auto"
+            classes={{ root: classes.labelFirst }}
           >
-            <HomeIcon />
-          </IconButton>
-        </Hidden>
-        <Tabs
-          value={0}
-          indicatorColor="primary"
-          textColor="primary"
-          variant="scrollable"
-          scrollButtons="auto"
-          classes={{ root: classes.labelFirst }}
-        >
-          <Tab classes={{ label: classes.label }} label="Stock Info" />
-          <Tab classes={{ label: classes.label }} label="Market Info" />
-          <Tab classes={{ label: classes.label }} label="Broker Info" />
-          <Tab classes={{ label: classes.label }} label="Calendar" />
-        </Tabs>
-      </Toolbar>
-    </AppBar>
+            <Tab classes={{ label: classes.label }} label="Stock Info" />
+            <Tab classes={{ label: classes.label }} label="Market Info" />
+            <Tab classes={{ label: classes.label }} label="Broker Info" />
+            <Tab classes={{ label: classes.label }} label="Calendar" />
+          </Tabs>
+        </Toolbar>
+      </AppBar>
+    </Hidden>
+    <Hidden smDown>
+      <AppBar position="static" color="default" className={classes.appBarMove}>
+        <Toolbar className={classes.toolBar} variant="dense" disableGutters>
+          <Hidden mdUp implementation="css">
+            <IconButton
+              aria-label="Open drawer"
+              className={classes.menuButton1}
+              onClick={() => {
+                onOpen();
+              }}
+            >
+              <HomeIcon />
+            </IconButton>
+          </Hidden>
+          <Tabs
+            value={0}
+            indicatorColor="primary"
+            textColor="primary"
+            variant="scrollable"
+            scrollButtons="auto"
+            classes={{ root: classes.labelFirst }}
+          >
+            <Tab classes={{ label: classes.label }} label="Stock Info" />
+            <Tab classes={{ label: classes.label }} label="Market Info" />
+            <Tab classes={{ label: classes.label }} label="Broker Info" />
+            <Tab classes={{ label: classes.label }} label="Calendar" />
+          </Tabs>
+        </Toolbar>
+      </AppBar>
+    </Hidden>
   </div>
 );
 

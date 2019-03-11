@@ -89,7 +89,7 @@ const useStyles = theme => ({
 });
 
 const Stock = ({ classes }) => (
-  <Grid className={classes.root} container spacing="8" justify="center">
+  <Grid className={classes.root} container spacing={8} justify="center">
     <Grid item xs={12} sm={11} md={6} lg={4}>
       <StockChart />
     </Grid>
