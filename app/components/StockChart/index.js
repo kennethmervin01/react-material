@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Divider } from '@material-ui/core';
+import { Grid, Divider, Hidden } from '@material-ui/core';
 import { Chart, ValueAxis, LineSeries } from '@devexpress/dx-react-chart-material-ui';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -105,7 +105,7 @@ const LineChart = () => (
       { argument: 4, value: 6008 },
       { argument: 5, value: 6015 },
     ]}
-    height={200}
+    height={150}
   >
     <ValueAxis />
     <LineSeries valueField="value" argumentField="argument" />
@@ -165,85 +165,71 @@ const StockInfo = ({ classes }) => (
             <td className={classes.customTd}>20,000</td>
             <td className={classes.customTd}>2</td>
           </tr>
-          <tr>
-            <td className={classes.customTd}>10</td>
-            <td className={classes.customTd}>69,800</td>
-            <td className={classes.customTd}>22.4000</td>
-            <td className={classes.customTd}>22.9500</td>
-            <td className={classes.customTd}>20,000</td>
-            <td className={classes.customTd}>2</td>
-          </tr>
-          <tr>
-            <td className={classes.customTd}>1</td>
-            <td className={classes.customTd}>5,000</td>
-            <td className={classes.customTd}>22.3500</td>
-            <td className={classes.customTd}>23.0000</td>
-            <td className={classes.customTd}>69,100</td>
-            <td className={classes.customTd}>5</td>
-          </tr>
         </tbody>
       </table>
-      <table className={classes.customTable}>
-        <thead>
-          <tr>
-            <th className={classes.customTh3} colSpan="5">
-              Last 5 Trades
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td className={classes.customTd}>Time</td>
-            <td className={classes.customTd}>Volume</td>
-            <td className={classes.customTd}>Price</td>
-            <td className={classes.customTd}>Buyer</td>
-            <td className={classes.customTd}>Seller</td>
-          </tr>
-          <tr>
-            <td className={classes.customTd}>15:20:00</td>
-            <td className={classes.customTd}>1,900</td>
-            <td className={classes.customTd}>22.8000</td>
-            <td className={classes.customTd}>COL FINA</td>
-            <td className={classes.customTd}>CITISECU</td>
-          </tr>
-          <tr>
-            <td className={classes.customTd}>15:20:00</td>
-            <td className={classes.customTd}>1,900</td>
-            <td className={classes.customTd}>22.8000</td>
-            <td className={classes.customTd}>COL FINA</td>
-            <td className={classes.customTd}>CITISECU</td>
-          </tr>
-          <tr>
-            <td className={classes.customTd}>15:20:00</td>
-            <td className={classes.customTd}>1,900</td>
-            <td className={classes.customTd}>22.8000</td>
-            <td className={classes.customTd}>COL FINA</td>
-            <td className={classes.customTd}>CITISECU</td>
-          </tr>
-          <tr>
-            <td className={classes.customTd}>15:20:00</td>
-            <td className={classes.customTd}>1,900</td>
-            <td className={classes.customTd}>22.8000</td>
-            <td className={classes.customTd}>COL FINA</td>
-            <td className={classes.customTd}>CITISECU</td>
-          </tr>
-          <tr>
-            <td className={classes.customTd}>15:20:00</td>
-            <td className={classes.customTd}>1,900</td>
-            <td className={classes.customTd}>22.8000</td>
-            <td className={classes.customTd}>COL FINA</td>
-            <td className={classes.customTd}>CITISECU</td>
-          </tr>
-        </tbody>
-      </table>
+      <Hidden lgUp>
+        <table className={classes.customTable}>
+          <thead>
+            <tr>
+              <th className={classes.customTh3} colSpan="5">
+                Last 5 Trades
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className={classes.customTd}>Time</td>
+              <td className={classes.customTd}>Volume</td>
+              <td className={classes.customTd}>Price</td>
+              <td className={classes.customTd}>Buyer</td>
+              <td className={classes.customTd}>Seller</td>
+            </tr>
+            <tr>
+              <td className={classes.customTd}>15:20:00</td>
+              <td className={classes.customTd}>1,900</td>
+              <td className={classes.customTd}>22.8000</td>
+              <td className={classes.customTd}>COL FINA</td>
+              <td className={classes.customTd}>CITISECU</td>
+            </tr>
+            <tr>
+              <td className={classes.customTd}>15:20:00</td>
+              <td className={classes.customTd}>1,900</td>
+              <td className={classes.customTd}>22.8000</td>
+              <td className={classes.customTd}>COL FINA</td>
+              <td className={classes.customTd}>CITISECU</td>
+            </tr>
+            <tr>
+              <td className={classes.customTd}>15:20:00</td>
+              <td className={classes.customTd}>1,900</td>
+              <td className={classes.customTd}>22.8000</td>
+              <td className={classes.customTd}>COL FINA</td>
+              <td className={classes.customTd}>CITISECU</td>
+            </tr>
+            <tr>
+              <td className={classes.customTd}>15:20:00</td>
+              <td className={classes.customTd}>1,900</td>
+              <td className={classes.customTd}>22.8000</td>
+              <td className={classes.customTd}>COL FINA</td>
+              <td className={classes.customTd}>CITISECU</td>
+            </tr>
+            <tr>
+              <td className={classes.customTd}>15:20:00</td>
+              <td className={classes.customTd}>1,900</td>
+              <td className={classes.customTd}>22.8000</td>
+              <td className={classes.customTd}>COL FINA</td>
+              <td className={classes.customTd}>CITISECU</td>
+            </tr>
+          </tbody>
+        </table>
+      </Hidden>
     </CardContent>
   </Card>
 );
 
 export default withStyles(styles)(StockInfo);
 
-{
-  /* <Divider />
+// {
+/* <Divider />
     <CardActions className={classes.actions} disableActionSpacing>
       <Button variant="contained" classes={{ root: classes.buy }}>
         BUY
@@ -253,7 +239,7 @@ export default withStyles(styles)(StockInfo);
         SELL
       </Button>
     </CardActions> */
-}
+// }
 
 /* <br />
       <table className={classes.customTable}>

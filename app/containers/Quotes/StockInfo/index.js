@@ -21,7 +21,9 @@ const useStyles = theme => ({
   },
   root: {
     flexGrow: 1,
-    marginTop: '5px',
+    // marginTop: '5px',
+    // padding:
+    padding: '10px 10px 10px 15px',
   },
   button: {
     marginTop: theme.spacing.unit + 20,
@@ -89,14 +91,30 @@ const useStyles = theme => ({
 });
 
 const Stock = ({ classes }) => (
-  <Grid className={classes.root} container spacing={8} justify="center">
-    <Grid item xs={12} sm={11} md={6} lg={4}>
+  <Grid className={classes.root} container spacing={16} justify="center">
+    <Grid item xs={12} sm={11} md={4} lg={4}>
       <StockChart />
     </Grid>
-    <Grid item xs={12} sm={11} md={5} lg={7}>
-      <StockInfo />
+    <Grid item xs={12} sm={11} md={4} lg={4}>
+      <StockChart />
+    </Grid>
+    <Grid item xs={12} sm={11} md={4} lg={4}>
+      <StockChart />
+    </Grid>
+
+    <Grid item xs={12} sm={11} md={4} lg={4}>
+      <StockChart />
+    </Grid>
+    <Grid item xs={12} sm={11} md={4} lg={4}>
+      <StockChart />
+    </Grid>
+    <Grid item xs={12} sm={11} md={4} lg={4}>
+      <StockChart />
     </Grid>
   </Grid>
 );
 
 export default withStyles(useStyles)(Stock);
+/* <Grid item xs={12} sm={11} md={5} lg={7}>
+      <StockInfo />
+    </Grid> */

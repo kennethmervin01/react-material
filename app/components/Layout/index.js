@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Tabs from 'components/Tabs';
-import Ticker from 'components/Ticker';
+import Ticker from 'components/TickerLight';
 import Hidden from '@material-ui/core/Hidden';
 import Drawer from './Drawer';
 

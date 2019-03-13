@@ -46,7 +46,7 @@ const style = theme => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
     }),
-    backgroundColor: '#053a71',
+    backgroundColor: '#11365d',
   },
   drawerOpen: {
     width: drawerWidth,
@@ -65,7 +65,7 @@ const style = theme => ({
     [theme.breakpoints.up('sm')]: {
       width: theme.spacing.unit * 9 + 1,
     },
-    backgroundColor: '#053a71',
+    backgroundColor: '#11365d',
   },
   toolbar: {
     display: 'flex',

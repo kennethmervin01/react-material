@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
@@ -35,7 +35,7 @@ const Ticker = ({ classes }) => {
     const child = [];
 
     // Outer loop to create parent
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 7; i++) {
       // Create the parent and add the children
       child.push(
         <Paper className={classes.ticker} key={i}>
@@ -54,21 +54,7 @@ const Ticker = ({ classes }) => {
             color="textSecondary"
             classes={{ caption: classes.captionText2 }}
           >
-            35,000
-          </Typography>
-          <Typography
-            variant="caption"
-            color="textSecondary"
-            classes={{ caption: classes.captionText }}
-          >
-            DBP-DALMA
-          </Typography>
-          <Typography
-            variant="caption"
-            color="textSecondary"
-            classes={{ caption: classes.captionText }}
-          >
-            ATR KIM
+            35%
           </Typography>
         </Paper>,
       );
@@ -76,7 +62,7 @@ const Ticker = ({ classes }) => {
     return child;
   }
 
-  return <div>{createCard()}</div>;
+  return <Fragment>{createCard()}</Fragment>;
 };
 
 export default withStyles(style)(Ticker);

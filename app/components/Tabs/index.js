@@ -8,10 +8,12 @@ import IconButton from '@material-ui/core/IconButton';
 import Hidden from '@material-ui/core/Hidden';
 import MenuIcon from '@material-ui/icons/Menu';
 import HomeIcon from '@material-ui/icons/Ballot';
+import DropDown from '@material-ui/icons/ArrowDropDown';
 import { withStyles } from '@material-ui/core/styles';
 import clogo from 'assets/cLogo.png';
 import Breadcrumbs from '@material-ui/lab/Breadcrumbs';
 import Link from '@material-ui/core/Link';
+import Grid from '@material-ui/core/Grid';
 
 const drawerWidth = 230;
 const style = theme => ({
@@ -36,12 +38,14 @@ const style = theme => ({
     color: '#fff',
   },
   label: {
-    fontSize: '10px',
+    fontSize: '12px',
+    color: '#fff',
   },
   labelFirst: {
     // fontSize: '10px',
     boxSizing: 'border-box',
     paddingLeft: '10px',
+    height: '20px',
   },
   appBar: {
     marginLeft: drawerWidth,
@@ -52,6 +56,7 @@ const style = theme => ({
   toolBar: {
     minHeight: '20px',
     paddingLeft: '8px',
+    paddingTop: '0px',
   },
   toolBarAppBar: {
     minHeight: '20px',
@@ -67,10 +72,14 @@ const style = theme => ({
     height: 18,
   },
   appBarMove: {
-    marginTop: '32px',
+    // marginTop: '32px',
+    backgroundColor: '#11365d',
   },
   tabs: {
     marginRight: '55px',
+  },
+  dropDown: {
+    paddingTop: '5px',
   },
 });
 
@@ -141,7 +150,17 @@ const TabMenu = ({ classes, onOpen }) => (
             scrollButtons="auto"
             classes={{ root: classes.labelFirst }}
           >
-            <Tab classes={{ label: classes.label }} label="Stock Info" />
+            <Tab
+              classes={{ label: classes.label }}
+              label={
+                <Grid container direction="row" alignItems="center">
+                  <Grid item>Stock Info</Grid>
+                  <Grid item className={classes.dropDown}>
+                    <DropDown />
+                  </Grid>
+                </Grid>
+              }
+            />
             <Tab classes={{ label: classes.label }} label="Market Info" />
             <Tab classes={{ label: classes.label }} label="Broker Info" />
             <Tab classes={{ label: classes.label }} label="Calendar" />
