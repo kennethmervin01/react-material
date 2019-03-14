@@ -40,12 +40,14 @@ const style = theme => ({
   label: {
     fontSize: '12px',
     color: '#fff',
+    // padding: '0px 24px',
   },
   labelFirst: {
     // fontSize: '10px',
     boxSizing: 'border-box',
     paddingLeft: '10px',
     height: '20px',
+    minHeight: '40px',
   },
   appBar: {
     marginLeft: drawerWidth,
@@ -73,13 +75,16 @@ const style = theme => ({
   },
   appBarMove: {
     // marginTop: '32px',
-    backgroundColor: '#11365d',
+    backgroundColor: '#03396c',
   },
   tabs: {
     marginRight: '55px',
   },
   dropDown: {
     paddingTop: '5px',
+  },
+  labelContainer: {
+    padding: '0px 24px 6px 24px',
   },
 });
 
@@ -120,10 +125,22 @@ const TabMenu = ({ classes, onOpen }) => (
             scrollButtons="auto"
             classes={{ root: classes.labelFirst }}
           >
-            <Tab classes={{ label: classes.label }} label="Stock Info" />
-            <Tab classes={{ label: classes.label }} label="Market Info" />
-            <Tab classes={{ label: classes.label }} label="Broker Info" />
-            <Tab classes={{ label: classes.label }} label="Calendar" />
+            <Tab
+              classes={{ label: classes.label, labelContainer: classes.labelContainer }}
+              label="Stock Info"
+            />
+            <Tab
+              classes={{ label: classes.label, labelContainer: classes.labelContainer }}
+              label="Market Info"
+            />
+            <Tab
+              classes={{ label: classes.label, labelContainer: classes.labelContainer }}
+              label="Broker Info"
+            />
+            <Tab
+              classes={{ label: classes.label, labelContainer: classes.labelContainer }}
+              label="Calendar"
+            />
           </Tabs>
         </Toolbar>
       </AppBar>

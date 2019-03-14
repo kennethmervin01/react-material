@@ -101,16 +101,6 @@ const Stock = ({ classes }) => (
     <Grid item xs={12} sm={11} md={4} lg={4}>
       <StockChart />
     </Grid>
-
-    <Grid item xs={12} sm={11} md={4} lg={4}>
-      <StockChart />
-    </Grid>
-    <Grid item xs={12} sm={11} md={4} lg={4}>
-      <StockChart />
-    </Grid>
-    <Grid item xs={12} sm={11} md={4} lg={4}>
-      <StockChart />
-    </Grid>
   </Grid>
 );
 
